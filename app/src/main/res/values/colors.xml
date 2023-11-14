@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#000000</color>
+    <color name="dark">#111a18</color>
+    <color name="esp">#453226</color>
+    <color name="mocha">#7a4328</color>
+    <color name="milk">#ddb399</color>
+    <color name="pumpkin">#c8703e</color>
+    <color name="red">#B00020</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="navy">#00425A</color>
+    <color name="teal">#1F8A70</color>
+    <color name="green">#BFDB38</color>
+    <color name="orange">#FC7300</color>
+    <color name="flu">#ABDCED</color>
+    <color name="gradyan">#82B1FF</color>
+</resources>

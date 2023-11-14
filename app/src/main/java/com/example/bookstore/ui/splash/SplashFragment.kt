@@ -1,0 +1,43 @@
+package com.example.bookstore.ui.splash
+
+import android.os.Bundle
+import androidx.fragment.app.Fragment
+import android.view.View
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
+import com.example.bookstore.R
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+
+@AndroidEntryPoint
+class SplashFragment : Fragment(R.layout.fragment_splash) {
+
+    private val viewModel by viewModels<SplashViewModel>()
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        viewLifecycleOwner.lifecycleScope.launch {
+            delay(3000)
+            viewModel.checkUserLogin()
+        }
+
+        initObservers()
+    }
+
+    private fun initObservers() {
+        viewModel.state.observe(viewLifecycleOwner) {
+            when (it) {
+                is SplashState.GoToHome -> {
+                    findNavController().navigate(R.id.action_splashFragment_to_homeFragment2)
+                }
+
+                SplashState.GoToSignIn -> {
+                    findNavController().navigate(R.id.action_splashFragment_to_signinFragment)
+                }
+            }
+        }
+    }
+}
