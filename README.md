@@ -5,7 +5,7 @@
  - Hilt for Dependency Injection
  - Retrofit
  - Chucker
- - Firebase Auth & Firestore
+ - Firebase Auth
  - Room Database
  - Glide
 
